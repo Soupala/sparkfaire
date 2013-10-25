@@ -1,0 +1,14 @@
+body {
+background-color: black;
+color: white;
+margin: 10px auto;
+}
+
+div#splash {
+	margin: 10px auto;
+	text-align:center;
+	}
+
+#spark {
+	max-width:96%;
+	}
