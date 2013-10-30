@@ -1,14 +1,105 @@
-body {
-background-color: black;
-color: white;
-margin: 10px auto;
+html {
+  font-size: 62.5%;
 }
-
-div#splash {
-	margin: 10px auto;
-	text-align:center;
-	}
-
+body {
+  background-color: black;
+  margin: 10px auto;
+  font-size: 1em;
+}
+#container {
+  max-width: 96%;
+  margin: 0 auto;
+  color: #d76107;
+  text-align: center;
+}
 #spark {
-	max-width:96%;
-	}
+  max-width: 96%;
+  margin: 0px auto;
+}
+/* Example of mixin */
+/* Implementation of mixin */
+#container {
+  -webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(20%, transparent), to(rgba(255, 255, 255, 0.2)));
+}
+/* For responsive, pre-define breakpoints, then pass selector, values, and nested rules into each @media @breakpoint_variable */
+/* =MIXINS (mostly from Twitter Bootstrap's mixins.less)
+   ---------------------------------------------------------------------------------------------------- */
+/* Palette for for responsive label stuff below */
+/*cream*/
+/*purple/grey*/
+/*mud*/
+/*lime*/
+/*midnight*/
+/*This adds a label in the top-left corner that displays the current media query
+state.*/
+body:after {
+  /* notice how we're nesting this stuff inside of a parent element */
+  background: red;
+  color: #ffffff;
+  content: "undefined";
+  left: 0;
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+  padding: .5em 1em;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  z-index: 99;
+}
+@media only screen and (max-width: 529px) {
+  body:after {
+    background: orange;
+    content: "mobile";
+  }
+}
+@media only screen and (min-width: 530px) and (max-width: 949px) {
+  body:after {
+    background: purple;
+    content: "tablet";
+  }
+}
+@media only screen and (min-width: 950px) and (max-width: 1128px) {
+  body:after {
+    background: green;
+    content: "desktop";
+  }
+}
+@media only screen and (min-width: 1129px) {
+  body:after {
+    background: blue;
+    content: "desktop-xl";
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min-device-pixel-ratio: 1.5) {
+  #container {
+    font-size: 3em;
+  }
+}
+@media only screen and (max-width: 529px) {
+  #container {
+    font-size: 5.5em;
+  }
+}
+@media only screen and (min-width: 530px) and (max-width: 949px) {
+  #container {
+    font-size: 6em;
+  }
+}
+@media only screen and (min-width: 950px) and (max-width: 1128px) {
+  #container {
+    font-size: 7em;
+    max-width: 85%;
+  }
+  #spark {
+    max-width: 85%;
+  }
+}
+@media only screen and (min-width: 1129px) {
+  #container {
+    font-size: 8em;
+    max-width: 73%;
+  }
+  #spark {
+    max-width: 73%;
+  }
+}
